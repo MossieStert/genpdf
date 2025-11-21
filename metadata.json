@@ -1,0 +1,5 @@
+{
+  "name": "GenPDF - AI Document Converter",
+  "description": "A powerful AI-driven tool to convert PDF documents into Markdown, HTML, JSON, and more using Gemini 2.5 Flash.",
+  "requestFramePermissions": []
+}
