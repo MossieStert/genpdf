@@ -107,7 +107,8 @@ export default async function handler(req: any, res: any) {
      });
    }
    // 🔍 Analyze PDF
-   const analysis = await analyzePdf(base64Data);
+   // const analysis = await analyzePdf(base64Data);
+   const analysis = { pageCount: 0, isScanned: false };
    console.log("📄 PDF analysis:", analysis);
    const data = await callGemini({ prompt, mimeType, base64Data });
    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
