@@ -96,7 +96,11 @@ async function callGemini({
   MAIN HANDLER (VERCEL)
 ========================= */
 export default async function handler(req: any, res: any) {
- if (req.method !== "POST") {
+  
+  console.log("API KEY EXISTS:", !!process.env.GEMINI_API_KEY);
+  console.log("API KEY START:", process.env.GEMINI_API_KEY?.slice(0, 5));
+
+  if (req.method !== "POST") {
    return res.status(405).json({ error: "Method not allowed" });
  }
  const start = Date.now();
