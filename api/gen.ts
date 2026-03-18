@@ -54,7 +54,7 @@ async function callGemini({
  if (base64Data.length > MAX_BASE64_SIZE) {
    throw new Error("PDF too large for Gemini processing");
  }
- const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+ const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
  const payload = {
    contents: [
      {
@@ -96,7 +96,7 @@ async function callGemini({
   MAIN HANDLER (VERCEL)
 ========================= */
 export default async function handler(req: any, res: any) {
-  
+
   console.log("API KEY EXISTS:", !!process.env.GEMINI_API_KEY);
   console.log("API KEY START:", process.env.GEMINI_API_KEY?.slice(0, 5));
 
