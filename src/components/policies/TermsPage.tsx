@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { usePageMeta } from "../../hooks/usePageMeta";
@@ -12,16 +11,6 @@ export const TermsPage: React.FC = () => {
     keywords: "terms of service, PDF tools terms",
   });
   return (
-    <>
-      <Helmet>
-        <title>Terms of Service | GenPDF</title>
-        <meta
-          name="description"
-          content="Review GenPDF's terms of service, acceptable use policies, and liability limitations."
-        />
-        <link rel="canonical" href="https://genpdf.app/terms" />
-      </Helmet>
-
       <div className="max-w-4xl mx-auto px-6 py-16">
         <Link to="/" className="text-sm text-rose-600 hover:underline">
           ← Back to Home
@@ -59,6 +48,5 @@ export const TermsPage: React.FC = () => {
           Last updated: 2024
         </p>
       </div>
-    </>
   );
 };

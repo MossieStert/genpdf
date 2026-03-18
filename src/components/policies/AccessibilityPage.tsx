@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { Accessibility } from "lucide-react";
 import { Link } from "react-router-dom";
 import { usePageMeta } from "../../hooks/usePageMeta";
@@ -12,16 +11,6 @@ export const AccessibilityPage: React.FC = () => {
     keywords: "accessibility statement, inclusive design",
      });
   return (
-    <>
-      <Helmet>
-        <title>Accessibility Statement | GenPDF</title>
-        <meta
-          name="description"
-          content="GenPDF is committed to accessibility, inclusive design, and WCAG-friendly document tools."
-        />
-        <link rel="canonical" href="https://genpdf.app/accessibility" />
-      </Helmet>
-
       <div className="max-w-4xl mx-auto px-6 py-16">
         <Link to="/" className="text-sm text-rose-600 hover:underline">
           ← Back to Home
@@ -54,6 +43,5 @@ export const AccessibilityPage: React.FC = () => {
           Last updated: 2024
         </p>
       </div>
-    </>
   );
 };

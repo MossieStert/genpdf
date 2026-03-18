@@ -1,20 +1,15 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { PolicyLayout } from "./PolicyLayout";
 import { usePageMeta } from "../../hooks/usePageMeta";
 
 export const PrivacyPolicyPage: React.FC = () => {
+  usePageMeta({
+  title: "Privacy Policy | GenPDF",
+  description:
+    "Read GenPDF's privacy policy. We do not sell data, store uploaded files, or use invasive tracking technologies.",
+  keywords: "privacy policy, PDF privacy, GenPDF security",
+  });
   return (
-    <>
-      <Helmet>
-        <title>Privacy Policy | GenPDF</title>
-        <meta
-          name="description"
-          content="Read GenPDF's privacy policy. We do not sell data, store uploaded files, or use invasive tracking technologies."
-        />
-        <link rel="canonical" href="https://genpdf.app/privacy" />
-      </Helmet>
-
       <PolicyLayout title="Privacy Policy">
         <p>
           Your privacy is extremely important to us. GenPDF does not sell, rent, or share personal information with third parties.
@@ -41,6 +36,5 @@ export const PrivacyPolicyPage: React.FC = () => {
           Last updated: 2024
         </p>
       </PolicyLayout>
-    </>
   );
 };

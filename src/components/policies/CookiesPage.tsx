@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { Cookie } from "lucide-react";
 import { Link } from "react-router-dom";
 import { usePageMeta } from "../../hooks/usePageMeta";
@@ -12,16 +11,6 @@ export const CookiesPage: React.FC = () => {
     keywords: "cookie policy, analytics cookies",
   });
   return (
-    <>
-      <Helmet>
-        <title>Cookie Policy | GenPDF</title>
-        <meta
-          name="description"
-          content="Learn how GenPDF uses essential and analytics cookies to improve performance while respecting privacy."
-        />
-        <link rel="canonical" href="https://genpdf.app/cookies" />
-      </Helmet>
-
       <div className="max-w-4xl mx-auto px-6 py-16">
         <Link to="/" className="text-sm text-rose-600 hover:underline">
           ← Back to Home
@@ -53,6 +42,5 @@ export const CookiesPage: React.FC = () => {
           Last updated: 2024
         </p>
       </div>
-    </>
   );
 };
