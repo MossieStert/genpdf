@@ -60,8 +60,9 @@ async function callGemini({
      {
        role: "user",
        parts: [
-         { inlineData: { mimeType, data: base64Data } },
-         { text: prompt }
+         { text: "Say Hello" }
+         //{ inlineData: { mimeType, data: base64Data } },
+         //{ text: prompt }
        ]
      }
    ]
@@ -107,8 +108,7 @@ export default async function handler(req: any, res: any) {
      });
    }
    // 🔍 Analyze PDF
-   // const analysis = await analyzePdf(base64Data);
-   const analysis = { pageCount: 0, isScanned: false };
+   const analysis = await analyzePdf(base64Data);
    console.log("📄 PDF analysis:", analysis);
    const data = await callGemini({ prompt, mimeType, base64Data });
    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
